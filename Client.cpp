@@ -53,7 +53,7 @@ int main (int argc, char* argv[]){
         int msg_size = msg.size();
         send(Connection, (char *)&msg_size, sizeof(int), 0);
         send(Connection, msg.c_str(), msg_size, 0);
-        //sleep(10);
+        sleep(10);
     }
 
     return 0;
