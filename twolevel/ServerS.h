@@ -2,6 +2,7 @@
 
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <unistd.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <iostream>
@@ -25,6 +26,7 @@ private:
     bool    IsInit();
     int     Accept();
     void    ClientHandler(int index);
+    void    stop();
 
 private:
     struct sockaddr_in m_server;

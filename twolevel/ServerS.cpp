@@ -14,14 +14,20 @@ ServerS::ServerS(const std::string& localAddr, uint16_t port)
 
     if (!IsInit()) return;
 
-    bind(m_serverSocket, (struct sockaddr *)&m_server, sizeof(m_server));
-    // TODO Check bind's return value
+    if(bind(m_serverSocket, (struct sockaddr *)&m_server, sizeof(m_server)) < 0){
+        std::cout << "Error bind" << std::endl;
+    }
     
 }
 
 ServerS::~ServerS()
 {
-    // TODO Закрытие сервера
+    stop();
+}
+
+void ServerS::stop(){
+    // Остановка сервера
+    close(m_serverSocket);
 }
 
 bool ServerS::Listen()
