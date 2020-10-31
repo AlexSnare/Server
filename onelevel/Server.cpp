@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     int newConnection; // храниит соединение с клиентом
     for (int i = 0; i < MAX_CONNECTIONS; ++i)
     {
-        newConnection = accept(server_socket, (struct sockaddr *)&server, (socklen_t *)&server);
+        newConnection = accept(server_socket, (struct sockaddr  *)&server, (socklen_t *)&server);
 
         if (newConnection == 0)
         {
