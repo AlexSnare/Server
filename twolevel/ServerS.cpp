@@ -14,7 +14,8 @@ ServerS::ServerS(const std::string& localAddr, uint16_t port)
 
     if (!IsInit()) return;
 
-    if(bind(m_serverSocket, (struct sockaddr *)&m_server, sizeof(m_server)) < 0){
+    if(bind(m_serverSocket, (struct sockaddr *)&m_server, sizeof(m_server)) < 0)
+    {
         std::cout << "Error bind" << std::endl;
     }
     
